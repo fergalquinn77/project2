@@ -1,0 +1,11 @@
+*{
+    margin:0;
+    padding:0;
+    border:none;
+}
+body {
+    background-color: rgb(10, 9, 12);
+    font-family: "Noto Sans", sans-serif;
+    color: #445361;
+    text-align: center;
+}
