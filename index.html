@@ -29,17 +29,16 @@
             <button data-type = "lizard" id = "difficult" class = "btn btn--lizard btn--big"><i class="far fa-hand-lizard"></i></button>
         </div>
 
-        <div class="game-settings">
-
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-        </div>
     </div>
     <div class="score-area">
         <p class="scores">Your score <span id="score">0</span></p>
         <p class="scores">Computers score <span id="incorrect">0</span></p>
+        <br>
+        <label class="toggle">
+            <input type="checkbox">
+            <span class="slider"></span>
+            <span class="labels" data-on="EASY" data-off="HARD"></span>
+          </label>
 
     </div>
     <script src="assets/js/script.js"></script>
