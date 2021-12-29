@@ -16,9 +16,11 @@ function runGame(gameType) {
         win = ["scissors", "lizard"];
         lose = ["spock", "paper"];
         if (win.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You win!`)
+            alert(`You choose ${gameType} and computer choose ${computer}. You win!`);
+            incrementScore();
         } else if (lose.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You loose!`)
+            alert(`You choose ${gameType} and computer choose ${computer}. You loose!`);
+            incrementWrongAnswer();
         } else {
             alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
         }
@@ -27,9 +29,11 @@ function runGame(gameType) {
         win = ["paper", "lizard"];
         lose = ["spock", "rock"];
         if (win.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You win!`)
+            alert(`You choose ${gameType} and computer choose ${computer}. You win!`);
+            incrementScore();
         } else if (lose.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You loose!`)
+            alert(`You choose ${gameType} and computer choose ${computer}. You loose!`);
+            incrementWrongAnswer();
         } else {
             alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
         }
@@ -38,9 +42,11 @@ function runGame(gameType) {
         win = ["paper", "spock"];
         lose = ["scissors", "rock"];
         if (win.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You win!`)
+            alert(`You choose ${gameType} and computer choose ${computer}. You win!`);
+            incrementScore();
         } else if (lose.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You loose!`)
+            alert(`You choose ${gameType} and computer choose ${computer}. You loose!`);
+            incrementWrongAnswer();
         } else {
             alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
         }
@@ -49,9 +55,11 @@ function runGame(gameType) {
         win = ["rock", "spock"];
         lose = ["scissors", "lizard"];
         if (win.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You win!`)
+            alert(`You choose ${gameType} and computer choose ${computer}. You win!`);
+            incrementScore();
         } else if (lose.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You loose!`)
+            alert(`You choose ${gameType} and computer choose ${computer}. You loose!`);
+            incrementWrongAnswer();
         } else {
             alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
         }
@@ -60,22 +68,31 @@ function runGame(gameType) {
         win = ["scissors", "rock"];
         lose = ["lizard", "paper"];
         if (win.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You win!`)
+            alert(`You choose ${gameType} and computer choose ${computer}. You win!`);
+            incrementScore();
         } else if (lose.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You loose!`)
-        } else {
-            alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
-        }
-    }
-    if (gameType == "rock") {
-        win = ["scissors", "lizard"];
-        lose = ["spock", "paper"];
-        if (win.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You win!`)
-        } else if (lose.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You loose!`)
+            alert(`You choose ${gameType} and computer choose ${computer}. You loose!`);
+            incrementWrongAnswer();
         } else {
             alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
         }
     }
 }
+
+function incrementScore(){
+
+    let oldScore = parseInt(document.getElementById('score').innerText);
+    document.getElementById('score').innerText = ++oldScore;
+}
+
+/**
+ * Gets the incorrect score from the DOM and increments it by 1
+ */
+
+function incrementWrongAnswer(){
+
+    let oldScore = parseInt(document.getElementById('incorrect').innerText);
+    document.getElementById('incorrect').innerText = ++oldScore;
+
+}
+
