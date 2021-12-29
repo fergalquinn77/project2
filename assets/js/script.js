@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
 
@@ -19,11 +20,13 @@ function runGame(gameType) {
             alert(`You choose ${gameType} and computer choose ${computer}. You win!`);
             incrementScore();
         } else if (lose.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You loose!`);
+            alert(`You choose ${gameType} and computer choose ${computer}. You lose!`);
             incrementWrongAnswer();
         } else {
             alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
         }
+        playerImage.src = `assets/images/${gameType}.jpg`;
+    computerImage.src = `assets/images/${computer}.jpg`;
     }
     if (gameType == "scissors") {
         win = ["paper", "lizard"];
@@ -32,7 +35,7 @@ function runGame(gameType) {
             alert(`You choose ${gameType} and computer choose ${computer}. You win!`);
             incrementScore();
         } else if (lose.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You loose!`);
+            alert(`You choose ${gameType} and computer choose ${computer}. You lose!`);
             incrementWrongAnswer();
         } else {
             alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
@@ -45,7 +48,7 @@ function runGame(gameType) {
             alert(`You choose ${gameType} and computer choose ${computer}. You win!`);
             incrementScore();
         } else if (lose.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You loose!`);
+            alert(`You choose ${gameType} and computer choose ${computer}. You lose!`);
             incrementWrongAnswer();
         } else {
             alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
@@ -58,7 +61,7 @@ function runGame(gameType) {
             alert(`You choose ${gameType} and computer choose ${computer}. You win!`);
             incrementScore();
         } else if (lose.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You loose!`);
+            alert(`You choose ${gameType} and computer choose ${computer}. You lose!`);
             incrementWrongAnswer();
         } else {
             alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
@@ -71,12 +74,15 @@ function runGame(gameType) {
             alert(`You choose ${gameType} and computer choose ${computer}. You win!`);
             incrementScore();
         } else if (lose.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You loose!`);
+            alert(`You choose ${gameType} and computer choose ${computer}. You lose!`);
             incrementWrongAnswer();
         } else {
             alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
         }
     }
+
+    playerImage.src = `assets/images/${gameType}.jpg`;
+    computerImage.src = `assets/images/${computer}.jpg`;
 }
 
 function incrementScore(){
@@ -95,4 +101,9 @@ function incrementWrongAnswer(){
     document.getElementById('incorrect').innerText = ++oldScore;
 
 }
+
+const playerImage = document.getElementById("userChoice");
+const computerImage = document.getElementById("computerChoice");
+
+
 

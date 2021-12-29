@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,31 +17,32 @@
 
     <title>Rock, Paper, Scissors, Lizard, Spock</title>
 </head>
+
 <body>
-    <img class="logo" src="assets/images/logo.png">
-    <h1 class="heading"><i class = "far fa-hand-rock">Rock</i> <i class="far fa-hand-paper">Paper</i> <i class="far fa-hand-scissors">Scissors</i> <i class="far fa-hand-lizard">Lizard</i> <i class="far fa-hand-spock">Spock</i> </h1>
+    <img class="logo" src="assets/images/logo.png" alt="Logo image">
+    <h1 class="heading"><i class="far fa-hand-rock">Rock</i> <i class="far fa-hand-paper">Paper</i> <i
+            class="far fa-hand-scissors">Scissors</i> <i class="far fa-hand-lizard">Lizard</i> <i
+            class="far fa-hand-spock">Spock</i> </h1>
 
     <div class="game-area">
-        <div class="controls-area">
-            <button data-type = "rock" class = "btn btn--rock btn--big"><i class = "far fa-hand-rock"></i></button>
-            <button data-type = "scissors" class = "btn btn--scissors btn--big"><i class="far fa-hand-scissors"></i></button>
-            <button data-type = "paper" class = "btn btn--paper btn--big"><i class="far fa-hand-paper"></i></button> 
-            <button data-type = "spock" id = "difficult" class = "btn btn--spock btn--big"><i class="far fa-hand-spock"></i></button>
-            <button data-type = "lizard" id = "difficult" class = "btn btn--lizard btn--big"><i class="far fa-hand-lizard"></i></button>
+        <button id="rock" data-type="rock" class="btn btn--rock btn--big">Rock</button>
+        <button id="scissors" data-type="scissors" class="btn btn--scissors btn--big">Scissors</button>
+        <button id="paper" data-type="paper" class="btn btn--paper btn--big">Paper</button>
+        <button data-type="spock" id="spock" class="btn btn--spock btn--big">Spock</button>
+        <button data-type="lizard" id="lizard" class="btn btn--lizard btn--big">Lizard</button>
+        <div class="choices">
+            <div><img id="userChoice">
+                <p class="scores">You: <span id="score">0</span></p>
+            </div>
+            <div> <img id="computerChoice">
+                <p class="scores">Computer: <span id="incorrect">0</span></p>
+            </div>
         </div>
-
     </div>
-    <div class="score-area">
-        <p class="scores">Your score <span id="score">0</span></p>
-        <p class="scores">Computers score <span id="incorrect">0</span></p>
-        <br>
-        <label class="toggle">
-            <input type="checkbox">
-            <span class="slider"></span>
-            <span class="labels" data-on="EASY" data-off="HARD"></span>
-          </label>
 
-    </div>
+
+
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
