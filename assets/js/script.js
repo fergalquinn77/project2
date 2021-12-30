@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
 
@@ -9,6 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 });
+
+const playerImage = document.getElementById("userChoice");
+const computerImage = document.getElementById("computerChoice");
 
 function runGame(gameType) {
     let moves = ["rock", "paper", "scissors", "spock", "lizard"];
@@ -25,8 +27,7 @@ function runGame(gameType) {
         } else {
             alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
         }
-        playerImage.src = `assets/images/${gameType}.jpg`;
-    computerImage.src = `assets/images/${computer}.jpg`;
+        
     }
     if (gameType == "scissors") {
         win = ["paper", "lizard"];
@@ -80,12 +81,15 @@ function runGame(gameType) {
             alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
         }
     }
-
+    playerImage.src = `assets/images/${gameType}.jpg`
+    playerImage.alt = `${gameType}`;
+    computerImage.src = `assets/images/${computer}.jpg`;
+    computerImage.alt = `${computer}`;
     playerImage.src = `assets/images/${gameType}.jpg`;
     computerImage.src = `assets/images/${computer}.jpg`;
 }
 
-function incrementScore(){
+function incrementScore() {
 
     let oldScore = parseInt(document.getElementById('score').innerText);
     document.getElementById('score').innerText = ++oldScore;
@@ -95,15 +99,9 @@ function incrementScore(){
  * Gets the incorrect score from the DOM and increments it by 1
  */
 
-function incrementWrongAnswer(){
+function incrementWrongAnswer() {
 
     let oldScore = parseInt(document.getElementById('incorrect').innerText);
     document.getElementById('incorrect').innerText = ++oldScore;
 
 }
-
-const playerImage = document.getElementById("userChoice");
-const computerImage = document.getElementById("computerChoice");
-
-
-
