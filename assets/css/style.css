@@ -79,6 +79,9 @@ body {
 
 @media screen and (max-width: 950px){
 
+.heading i{
+    font-size: 16px;
+  }
   .game-area {
     height: 90vh;
     max-height: 1000px;
