@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const playerImage = document.getElementById("userChoice");
 const computerImage = document.getElementById("computerChoice");
+const moves = ["rock", "paper", "scissors", "spock", "lizard"];
 
 function runGame(gameType) {
-    let moves = ["rock", "paper", "scissors", "spock", "lizard"];
     let computer = moves[Math.floor(Math.random() * moves.length)];
     if (gameType == "rock") {
         win = ["scissors", "lizard"];
@@ -92,16 +92,22 @@ function runGame(gameType) {
 function incrementScore() {
 
     let oldScore = parseInt(document.getElementById('score').innerText);
-    document.getElementById('score').innerText = ++oldScore;
+    document.getElementById('score').innerText = oldScore++;
 }
 
 /**
  * Gets the incorrect score from the DOM and increments it by 1
  */
 
+function startGame(){}
+
+function endGame(){}
+
+function checkScore(){}
+
 function incrementWrongAnswer() {
 
     let oldScore = parseInt(document.getElementById('incorrect').innerText);
-    document.getElementById('incorrect').innerText = ++oldScore;
+    document.getElementById('incorrect').innerText = oldScore++;
 
 }
