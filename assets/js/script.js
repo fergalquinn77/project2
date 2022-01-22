@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+/**document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName("button");
 
     for (let button of buttons) {
@@ -7,81 +7,77 @@ document.addEventListener("DOMContentLoaded", function () {
             runGame(gameType);
         })
     }
+});*/
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("start").onclick = function () {
+        startGame()
+    };
 });
+
 
 const playerImage = document.getElementById("userChoice");
 const computerImage = document.getElementById("computerChoice");
 const moves = ["rock", "paper", "scissors", "spock", "lizard"];
+let computerMove = moves[Math.floor(Math.random() * moves.length)];
 
 function runGame(gameType) {
-    let computer = moves[Math.floor(Math.random() * moves.length)];
     if (gameType == "rock") {
         win = ["scissors", "lizard"];
         lose = ["spock", "paper"];
-        if (win.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You win!`);
-            incrementScore();
-        } else if (lose.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You lose!`);
-            incrementWrongAnswer();
+        if (win.includes(computerMove)) {
+            computerWin();
+        } else if (lose.includes(computerMove)) {
+            playerWin();
         } else {
-            alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
+            draw();
         }
-        
     }
     if (gameType == "scissors") {
         win = ["paper", "lizard"];
         lose = ["spock", "rock"];
-        if (win.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You win!`);
-            incrementScore();
-        } else if (lose.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You lose!`);
-            incrementWrongAnswer();
+        if (win.includes(computerMove)) {
+            computerWin();
+        } else if (lose.includes(computerMove)) {
+            playerWin();
         } else {
-            alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
+            draw();
         }
     }
     if (gameType == "lizard") {
         win = ["paper", "spock"];
         lose = ["scissors", "rock"];
-        if (win.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You win!`);
-            incrementScore();
-        } else if (lose.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You lose!`);
-            incrementWrongAnswer();
+        if (win.includes(computerMove)) {
+            computerWin();
+        } else if (lose.includes(computerMove)) {
+            playerWin();
         } else {
-            alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
+            draw();
         }
     }
     if (gameType == "paper") {
         win = ["rock", "spock"];
         lose = ["scissors", "lizard"];
-        if (win.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You win!`);
-            incrementScore();
-        } else if (lose.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You lose!`);
-            incrementWrongAnswer();
+        if (win.includes(computerMove)) {
+            computerWin();
+        } else if (lose.includes(computerMove)) {
+            playerWin();
         } else {
-            alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
+            draw();
         }
     }
     if (gameType == "spock") {
         win = ["scissors", "rock"];
         lose = ["lizard", "paper"];
-        if (win.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You win!`);
-            incrementScore();
-        } else if (lose.includes(computer)) {
-            alert(`You choose ${gameType} and computer choose ${computer}. You lose!`);
-            incrementWrongAnswer();
+        if (win.includes(computerMove)) {
+            computerWin();
+        } else if (lose.includes(computerMove)) {
+            playerWin();
         } else {
-            alert(`You choose ${gameType} and computer choose ${computer}. It's a draw!`)
+            draw();
         }
     }
-    playerImage.src = `assets/images/${gameType}.jpg`
+    playerImage.src = `assets/images/${gameType}.jpg`;
     playerImage.alt = `${gameType}`;
     computerImage.src = `assets/images/${computer}.jpg`;
     computerImage.alt = `${computer}`;
@@ -89,25 +85,36 @@ function runGame(gameType) {
     computerImage.src = `assets/images/${computer}.jpg`;
 }
 
-function incrementScore() {
+function incrementScore(gameResult) {
 
     let oldScore = parseInt(document.getElementById('score').innerText);
     document.getElementById('score').innerText = oldScore++;
-}
 
-/**
- * Gets the incorrect score from the DOM and increments it by 1
- */
-
-function startGame(){}
-
-function endGame(){}
-
-function checkScore(){}
-
-function incrementWrongAnswer() {
-
-    let oldScore = parseInt(document.getElementById('incorrect').innerText);
+    /**let oldScore = parseInt(document.getElementById('incorrect').innerText);
     document.getElementById('incorrect').innerText = oldScore++;
-
+    */
 }
+
+function startGame() {
+    if (document.getElementById("difficulty").value === "easy") {
+        document.getElementById("easy").style.display = "inline-block";
+    } else {
+        document.getElementById("easy").style.display = "inline-block";
+        document.getElementById("difficult").style.display = "inline-block";
+    }
+    document.getElementById("startControls").style.display = "none";
+}
+
+function difficulty() {}
+
+function computerWin() {}
+
+function playerWin() {}
+
+function draw() {}
+
+function endGame() {}
+
+function checkScore() {}
+
+function draw() {}
