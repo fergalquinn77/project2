@@ -17,8 +17,8 @@ function runGame(gameType) {
 
     const moves = ["rock", "paper", "scissors", "spock", "lizard"];
     let computerMove = moves[Math.floor(Math.random() * moves.length)];
-console.log(gameType);
-console.log(computerMove);
+    console.log(gameType);
+    console.log(computerMove);
     if (gameType == "rock") {
         win = ["scissors", "lizard"];
         lose = ["spock", "paper"];
@@ -29,7 +29,7 @@ console.log(computerMove);
         } else {
             draw();
         }
-        updateImage(gameType,computerMove);
+        updateImage(gameType, computerMove);
     }
     if (gameType == "scissors") {
         win = ["paper", "lizard"];
@@ -41,7 +41,7 @@ console.log(computerMove);
         } else {
             incrementScore("draw");
         }
-        updateImage(gameType,computerMove);
+        updateImage(gameType, computerMove);
     }
     if (gameType == "lizard") {
         win = ["paper", "spock"];
@@ -53,7 +53,7 @@ console.log(computerMove);
         } else {
             draw();
         }
-        updateImage(gameType,computerMove);
+        updateImage(gameType, computerMove);
     }
     if (gameType == "paper") {
         win = ["rock", "spock"];
@@ -65,7 +65,7 @@ console.log(computerMove);
         } else {
             draw();
         }
-        updateImage(gameType,computerMove);
+        updateImage(gameType, computerMove);
     }
     if (gameType == "spock") {
         win = ["scissors", "rock"];
@@ -77,27 +77,27 @@ console.log(computerMove);
         } else {
             draw();
         }
-        updateImage(gameType,computerMove);
+        updateImage(gameType, computerMove);
     }
 
 }
 
 function incrementScore(gameResult) {
-console.log(gameResult);
+    console.log(gameResult);
     if (gameResult === "user") {
-        let oldScore = parseInt(document.getElementById('userScore').innerText);
-        document.getElementById('userScore').innerText = ++oldScore;
+        let userOldScore = parseInt(document.getElementById('userScore').innerText);
+        document.getElementById('userScore').innerText = ++userOldScore;
         console.log("win");
     } else if (gameResult === "computer") {
-        let oldScore = parseInt(document.getElementById('computerScore').innerText);
-        document.getElementById('computerScore').innerText = ++oldScore;
+        let compOldScore = parseInt(document.getElementById('computerScore').innerText);
+        document.getElementById('computerScore').innerText = ++compOldScore;
         console.log("loose");
-    }
-    else {
+    } else {
 
     }
-
-
+    let userNewScore = document.getElementById('userScore').innerText;
+    let compNewScore = document.getElementById('computerScore').innerText;
+    checkScore(userNewScore, compNewScore);
 }
 
 function startGame() {
@@ -111,15 +111,18 @@ function startGame() {
     document.getElementById("choices").style.display = "inline-flex";
 }
 
-function difficulty() {}
-
 function draw() {}
 
 function endGame() {}
 
-function checkScore() {}
+function checkScore(userScore, compScore) {
+    let finish = document.getElementById("numberGames").value;
+    if (finish == userScore || finish == compScore) {
+        console.log("finish")
+    }
+}
 
-function updateImage(userInp,compInp){
+function updateImage(userInp, compInp) {
     let userImage = document.getElementById("userChoice");
     let computerImage = document.getElementById("computerChoice");
     userImage.src = `assets/images/${userInp}.jpg`;
@@ -128,7 +131,7 @@ function updateImage(userInp,compInp){
     computerImage.alt = `${compInp}`;
 }
 
-function gameReset(){
+function gameReset() {
     let userImage = document.getElementById("userChoice");
     let computerImage = document.getElementById("computerChoice");
     userImage.src = 'assets/images/thumbs.jpg';
