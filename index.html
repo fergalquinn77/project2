@@ -25,7 +25,7 @@
             class="far fa-hand-scissors">Scissors</i> <i class="far fa-hand-lizard">Lizard</i> <i
             class="far fa-hand-spock">Spock</i> </h1>
 
-    <div class="game-area">
+    <div class="game-area flex-container">
         <p id="introduction">Welcome!. Here are instructions on how to play the game.</p>
         <div id="easy" hidden>
             <button id="rock" class="btn btn--rock btn--big" data-type="rock">Rock</button>
@@ -44,20 +44,28 @@
                 <option value="easy">Easy</option>
                 <option value="hard">Hard</option>
             </select>
+            <label for="numberGames">Number of Games</label>
+
+            <select name="numberGames" id="numberGames">
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
+            </select>
         </div>
         <div id="choices" hidden>
-            <div><img id="userChoice" src="assets/images/thumbs.jpg" alt="Your score">
-                <p class="scores">You: <span id="score">0</span></p>
+            <div><img id="userChoice" src="assets/images/thumbs.jpg" alt="User score">
+                <p class="scores">You: <span id="userScore">0</span></p>
             </div>
             <div> <img id="computerChoice" src="assets/images/computer.jpg" alt="Computer score">
-                <p class="scores">Computer: <span id="incorrect">0</span></p>
+                <p class="scores">Computer: <span id="computerScore">0</span></p>
             </div>
             <button id="reset" class="btn btn--big" data-type="reset">Reset</button>
         </div>
 
     </div>
-
-
 
     <script src="assets/js/script.js"></script>
 </body>
