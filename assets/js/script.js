@@ -118,7 +118,7 @@ function endGame() {}
 function checkScore(userScore, compScore) {
     let finish = document.getElementById("numberGames").value;
     if (finish == userScore || finish == compScore) {
-        console.log("finish")
+        document.getElementById("message").innerHTML="The game is now finished. Press the start button if you would like to start another game.";
     }
 }
 
